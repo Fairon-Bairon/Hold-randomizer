@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рандомайзер зацепок</title>
+</head>
+<style>
+body {
+    background-color: rgb(99, 150, 6);
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+p {
+  font-size: 1.2rem;
+
+}
+button {
+    background-color: rgb(137, 146, 141);
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 1vw;
+}
+
+p-result{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+</style>
+<body>
+    <h1>Рандомайзер траверсов</h1>
+    <p></p>
+    <p></p>
+    <button id="button-traverse" onClick="randomizeTraverse()">Срандомизировать траверс</button>
+    <button id="reset" onClick="reset()">Давай по новой!</button>
+<br>
+<br>
+<p>Итак, следующий траверс: </p>
+<p id="p-result"></p>
+</body>
+<script>
+const body = document.querySelector("body");
+let buttonTraverse = document.getElementById("button-traverse");
+
+let pResult = document.getElementById("p-result");
+
+
+
+let holdType = ["Лазание траверсом. (бесшумно)",
+"Лазание траверсом ноги и руки скрестно",
+"Лазание боком. Лицом в перед. Спиной в перед",
+"Лазание траверсом с ограничениями по высоте",
+"Лазание траверса на скорость",
+"Лазание траверса на время (выносливость)",
+"Лазание между контрольными точками - точек коснутся. По порядку/в любом порядке. На время",
+"траверс сдваивание рук",
+"траверс сдваивание ног",
+"траверс руки прямые, сгинать в локтях нельзя",
+"траверс по определённому типу зацепок (хапалки, пассивы, мизера)",
+"траверс с дохватами (два движения одной рукой до предела, перестановка ног, потом другой рукой до предела, опять перестановка ног)",
+"Лазание - ноги в позе лягушка",
+"Лазание - ноги скрестно",
+"Смена рук на зацепке в прыжке",
+"Смена ног на зацепке в прыжке",
+"Поворот колена ведущей ноги при перехвате.(скручивание)",]
+
+function randomizeTraverse (){
+
+let type = holdType[Math.floor(holdType.length * Math.random())];
+pResult.innerHTML += type+",<br/>";
+}
+
+
+function reset(){
+    pResult.innerHTML = "";
+}
+</script>
+</html>
