@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рандомайзер зацепок</title>
+    <title>Рандомайзеры</title>
 </head>
 <style>
 body {
@@ -33,50 +33,8 @@ button {
 }
 </style>
 <body>
-    <!-- мб сделать не только рандомайзер цветов, но и рандомайзер типа зацепок (хапалка, мизер, пассив) -->
-    <h1>Рандомайзер зацепок</h1>
-    <p>У тебя закончилась фантазия? Не волнуйся, теперь рандомайзер зацепок сам подскажет тебе следующую зацепку!</p>
-    <p>Просто выбери, что именно ты хочешь получить от рандомайзера:</p>
-    <button id="button-color" onClick="randomizeColor()">Цвет зацепки</button>
-    <button id="button-type" onClick="randomizeType()">Тип зацепки</button>
-    <button id="button-both" onClick="randomizeBoth()">Цвет и тип зацепки</button>
-    <button id="reset" onClick="reset()">Давай по новой!</button>
-<br>
-<br>
-<p id="p-result">Итак, следующая зацепка: </p>
+    <h1>Рандомайзеры</h1>
+    <button><a href="random-hold.html">Рандомайзер зацепок</a></button>
+     <button><a href="random-traverse.html">Рандомайзер траверсов</a></button>
 </body>
-<script>
-const body = document.querySelector("body");
-let buttonColor = document.getElementById("button-color");
-let buttonType = document.getElementById("button-type");
-let buttonBoth = document.getElementById("button-both");
-let pResult = document.getElementById("p-result");
-
-let backgroundColors = ["black", "red", "yellow", "green", "darkblue", "lightblue", "orange", "purple", "pink"];
-let russianColors = ["черный", "красный", "желтый", "зеленый", "синий", "голубой", "оранжевый", "фиолетовый", "розовый"]
-function randomizeColor (){
-
-    let randomIndex = Math.floor(backgroundColors.length * Math.random());
-    body.style.backgroundColor = backgroundColors[randomIndex];
-    pResult.innerHTML += russianColors[randomIndex]+",\n";
-
-}
-
-let holdType = ["хапалка", "мизер", "пассив", "щипок", "полочка", "подхват", "дырка", "рельеф"]
-
-function randomizeType (){
-
-let type = holdType[Math.floor(holdType.length * Math.random())];
-pResult.innerHTML += type+",\n";
-}
-
-function randomizeBoth(){
-    randomizeColor ();
-    randomizeType ();
-}
-
-function reset(){
-    pResult.innerHTML = "Итак, следующая зацепка: ";
-}
-</script>
 </html>
